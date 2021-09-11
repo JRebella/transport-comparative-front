@@ -1,20 +1,19 @@
 import type { NextPage } from "next";
+import { useState } from "react";
+import { Route } from "../api/AppPrices";
 import FloatingSideBar from "../components/Layout/FloatingSideBar/FloatingSideBar";
+import PricesComparison from "../components/PricesComparison/component";
 import RoutePicker from "../components/RoutePicker/RoutePicker";
 import styles from "../styles/Home.module.css";
-import PricesComparison from "../components/PricesComparison/component";
-
-import { noop } from "lodash";
-import { queryGeolocation } from "../api/AppPrices";
-
-queryGeolocation("26 de marzo 3394");
 
 const Home: NextPage = () => {
+  const [routeQuery, setRouteQuery] = useState<Route | null>(null);
+
   return (
     <div className={styles.container}>
       <FloatingSideBar>
-        <RoutePicker setRoute={noop} />
-        <PricesComparison/>
+        <RoutePicker setRoute={setRouteQuery} />
+        <PricesComparison />
       </FloatingSideBar>
     </div>
   );

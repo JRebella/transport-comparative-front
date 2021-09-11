@@ -7,14 +7,14 @@ import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { green, blue } from "@material-ui/core/colors";
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: blue[500],
-    },
-    secondary: {
-      main: green[500],
-    },
-  },
+  // palette: {
+  //   primary: {
+  //     main: green[500],
+  //   },
+  //   secondary: {
+  //     main: green[500],
+  //   },
+  // },
 });
 function MyApp({ Component, pageProps }: AppProps) {
   return (

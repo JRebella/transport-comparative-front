@@ -14,9 +14,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Geoloc
     })
     .then((jsonResponse) => {
       const firstFind = jsonResponse?.data[0];
-      res.status(200).json({
-        ...firstFind,
-        locationQuery: location as string,
-      });
+      if (!firstFind) {
+        res.status(200).json(null);
+      } else {
+        res.status(200).json({
+          ...firstFind,
+          locationQuery: location as string,
+        });
+      }
     });
 }
