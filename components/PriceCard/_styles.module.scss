@@ -1,0 +1,38 @@
+.root {
+  flex-grow: 1;
+}
+.paper {
+  padding: 20px;
+  margin: auto;
+  max-width: 400px;
+}
+.image {
+  width: 80px;
+  height: 80px;
+  padding-right: 20px;
+}
+.buttonWrapper {
+  width: 100%;
+}
+.img {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.flexContainerRow {
+  display: flex;
+  justify-content: space-between;
+}
+.subtitleFlex {
+  @extend .flexContainer;
+  padding-top: 5px;
+}
+.fullWidth {
+  width: 100%;
+}
