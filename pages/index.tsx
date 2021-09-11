@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
-import ExampleComponent from "../components/Example/ExampleComponent";
+import FloatingSideBar from "../components/Layout/FloatingSideBar/FloatingSideBar";
+import RoutePicker from "../components/RoutePicker/RoutePicker";
 import styles from "../styles/Home.module.css";
+
+import { noop } from "lodash";
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <ExampleComponent text="test text" />
+      <FloatingSideBar>
+        <RoutePicker setRoute={noop} />
+        otro componente aca
+      </FloatingSideBar>
     </div>
   );
 };
