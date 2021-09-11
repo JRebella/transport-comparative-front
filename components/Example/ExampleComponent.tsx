@@ -1,4 +1,5 @@
 import styles from "./_styles.module.scss";
+import Button from '@material-ui/core/Button';
 
 type Props = {
   text: string;
@@ -7,7 +8,9 @@ type Props = {
 const ExampleComponent = ({ text }: Props) => {
   return (
     <div className={styles.container}>
-      Example component / Text from props: <strong>{text}</strong>
+      <Button variant="contained" color="primary">
+      {`Hello World with material ${text}`}
+    </Button>
     </div>
   );
 };
