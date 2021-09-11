@@ -4,7 +4,7 @@ import { Geolocation } from "../../api/AppPrices";
 
 const API_KEY = "558233b31a741aa3b0e9babaac84c11b";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Geolocation>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<Geolocation | null>) {
   const { location } = req.query;
   fetch(`http://api.positionstack.com/v1/forward?access_key=${API_KEY}&query=${location}`)
     .then((r) => {
